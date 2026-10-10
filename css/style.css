@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary-navy: #0B2545;
+  --secondary-navy: #13315C;
+  --accent-gold: #C5A059;
+  --accent-gold-light: #E2C288;
+  --bg-sand: #F9F8F6;
+  --bg-sand-dark: #EFECE6;
+  --text-main: #0B2545; /* Refinado para o navy principal */
+  --text-muted: #48566F; /* Um pouco mais escuro para melhor leitura */
+  --whatsapp-green: #25D366;
+  --whatsapp-dark: #1EBE5D;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-sand);
+  line-height: 1.7; /* Aumentado para leitura mais elegante */
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+/* Ritmo vertical controlado por utilitários (mb-*) evita espaçamentos duplicados */
+.text-muted {
+  color: var(--text-muted);
+}
+
+/* Compensa o header fixo ao navegar por âncoras */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-sand-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-navy);
+  border-radius: 4px;
+}
+
+/* Cinematic Hero Background Gradient */
+.hero-bg-overlay {
+  background: linear-gradient(90deg, rgba(11, 37, 69, 0.95) 0%, rgba(11, 37, 69, 0.85) 45%, rgba(11, 37, 69, 0.4) 70%, transparent 100%);
+}
+
+@media(max-width: 768px) {
+  .hero-bg-overlay {
+    background: linear-gradient(180deg, rgba(11, 37, 69, 0.85) 0%, rgba(11, 37, 69, 0.70) 60%, rgba(11, 37, 69, 0.5) 100%);
+  }
+  .hero-parallax-img {
+    object-position: 70% center !important;
+  }
+}
+
+/* Parallax Hero Image Container */
+.hero-parallax-img {
+  will-change: transform;
+  transform: scale(1.3);
+  transform-origin: center center;
+}
+
+/* Cinematic staggered entrance no Hero (executa uma vez no carregamento) */
+.hero-entrance > * {
+  opacity: 0;
+  transform: translateY(26px);
+  animation: heroRise 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.hero-entrance > *:nth-child(1) { animation-delay: 0.15s; }
+.hero-entrance > *:nth-child(2) { animation-delay: 0.30s; }
+.hero-entrance > *:nth-child(3) { animation-delay: 0.45s; }
+.hero-entrance > *:nth-child(4) { animation-delay: 0.60s; }
+.hero-entrance > *:nth-child(5) { animation-delay: 0.75s; }
+
+@keyframes heroRise {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Acessibilidade: foco visível consistente em todos os elementos interativos */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Interactive animated step icons (Como Funciona) */
+.step-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1rem;
+  background: #ffffff;
+  color: var(--primary-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--bg-sand-dark);
+  box-shadow: 0 6px 18px -8px rgba(11, 37, 69, 0.35);
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.4s ease,
+              color 0.4s ease,
+              box-shadow 0.4s ease,
+              border-color 0.4s ease;
+}
+
+/* Animações específicas por etapa */
+.step-icon-1 { animation: stepFloat 3.6s ease-in-out infinite; }
+.step-icon-2 { animation: stepPulse 3.4s ease-in-out infinite; }
+.step-icon-3 { animation: stepTilt 4.2s ease-in-out infinite; }
+
+.step-icon:hover,
+.step-icon:focus-visible {
+  animation: none;
+  background: var(--primary-navy);
+  color: var(--accent-gold);
+  border-color: var(--accent-gold);
+  transform: translateY(-6px) scale(1.08);
+  box-shadow: 0 16px 30px -12px rgba(11, 37, 69, 0.55);
+}
+
+.step-icon:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 3px;
+}
+
+.step-icon:active {
+  transform: translateY(-2px) scale(0.97);
+}
+
+@keyframes stepFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+@keyframes stepPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+@keyframes stepTilt {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-4px) rotate(-4deg); }
+}
+
+/* Linha de progressão discreta entre as etapas (somente desktop) */
+@media (min-width: 768px) {
+  .steps-grid {
+    position: relative;
+  }
+  .steps-grid::before {
+    content: "";
+    position: absolute;
+    top: calc(4rem - 1px);
+    left: 12%;
+    right: 12%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, rgba(197, 160, 89, 0.35) 20%, rgba(197, 160, 89, 0.35) 80%, transparent 100%);
+    z-index: 0;
+    pointer-events: none;
+  }
+}
+
+/* Scroll Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animation delay helper */
+.stagger-1 { transition-delay: 0.08s; }
+.stagger-2 { transition-delay: 0.16s; }
+.stagger-3 { transition-delay: 0.24s; }
+.stagger-4 { transition-delay: 0.32s; }
+
+/* Before & After Slider */
+.ba-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  user-select: none;
+  border-radius: 1.5rem;
+  box-shadow: 0 24px 50px -20px rgba(11, 37, 69, 0.35);
+  --ba-pos: 50%;
+  touch-action: pan-y;
+}
+
+.ba-image-before,
+.ba-image-after {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ba-image-after-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  /* Revela somente a porção esquerda, mantendo as duas fotos alinhadas 1:1 */
+  clip-path: inset(0 calc(100% - var(--ba-pos)) 0 0);
+}
+
+.ba-image-after {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+}
+
+/* Divisor vertical dourado */
+.ba-slider-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: linear-gradient(180deg, rgba(226, 194, 136, 0.3) 0%, var(--accent-gold) 18%, var(--accent-gold) 82%, rgba(226, 194, 136, 0.3) 100%);
+  z-index: 4;
+  cursor: ew-resize;
+  transform: translateX(-50%);
+  touch-action: none;
+}
+
+/* Área de toque confortável no mobile (44px+) */
+.ba-slider-handle::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 48px;
+  transform: translateX(-50%);
+}
+
+.ba-slider-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  background: var(--primary-navy);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+  border: 2px solid var(--accent-gold);
+  pointer-events: none;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease;
+}
+
+.ba-container:hover .ba-slider-button {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: var(--secondary-navy);
+}
+
+.ba-slider-handle:focus-visible {
+  outline: none;
+}
+
+.ba-slider-handle:focus-visible .ba-slider-button {
+  transform: translate(-50%, -50%) scale(1.12);
+  box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.45), 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+.ba-slider-handle:active .ba-slider-button {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+.ba-label {
+  position: absolute;
+  bottom: 1.25rem;
+  padding: 0.4rem 0.9rem;
+  background: rgba(11, 37, 69, 0.85);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  z-index: 5;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  pointer-events: none;
+}
+
+.ba-label-before { right: 1.25rem; }
+.ba-label-after { left: 1.25rem; }
+
+/* Lightbox Modal */
+#lightbox-modal {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
+}
+#lightbox-modal.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--whatsapp-green);
+  color: white;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+  z-index: 99;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1) translateY(-2px);
+  background-color: var(--whatsapp-dark);
+  box-shadow: 0 14px 30px rgba(37, 211, 102, 0.5);
+}
+
+/* Cards & Gallery Hover microinteractions */
+.card-hover-effect {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+.card-hover-effect:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px -8px rgba(11, 37, 69, 0.12);
+  border-color: rgba(197, 160, 89, 0.5);
+}
+
+/* Asymmetric Editorial Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 220px;
+  gap: 1rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  cursor: pointer;
+  margin: 0;
+  height: 100%;
+  box-shadow: 0 4px 14px -6px rgba(11, 37, 69, 0.12);
+}
+
+/* Asymmetric spans (desktop) */
+.g-item-1 { grid-column: span 2; grid-row: span 2; }
+.g-item-2 { grid-column: span 2; grid-row: span 1; }
+.g-item-3 { grid-column: span 1; grid-row: span 1; }
+.g-item-4 { grid-column: span 1; grid-row: span 1; }
+.g-item-5 { grid-column: span 2; grid-row: span 1; }
+.g-item-6 { grid-column: span 2; grid-row: span 1; }
+
+@media (max-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 200px;
+  }
+  .g-item-1 { grid-column: span 2; grid-row: span 2; }
+  .g-item-2 { grid-column: span 2; grid-row: span 1; }
+  .g-item-3 { grid-column: span 1; grid-row: span 1; }
+  .g-item-4 { grid-column: span 1; grid-row: span 1; }
+  .g-item-5 { grid-column: span 2; grid-row: span 1; }
+  .g-item-6 { grid-column: span 2; grid-row: span 1; }
+}
+
+@media (max-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 230px;
+    gap: 0.85rem;
+  }
+  .g-item-1 { grid-column: span 1; grid-row: span 1; }
+  .g-item-2,
+  .g-item-3,
+  .g-item-4,
+  .g-item-5,
+  .g-item-6 { grid-column: span 1; grid-row: span 1; }
+}
+.gallery-item img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.gallery-item:hover img,
+.gallery-item:focus-visible img {
+  transform: scale(1.04);
+}
+.gallery-item:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 3px;
+}
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(11, 37, 69, 0.82) 0%, rgba(11, 37, 69, 0.1) 55%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.4rem;
+  pointer-events: none;
+}
+.gallery-item:hover .gallery-overlay,
+.gallery-item:focus-visible .gallery-overlay {
+  opacity: 1;
+}
+
+/* Em dispositivos sem hover (toque), mantém o título legível */
+@media (hover: none) {
+  .gallery-overlay {
+    opacity: 1;
+  }
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .hero-parallax-img {
+    transform: scale(1.05) !important;
+  }
+  .hero-entrance > * {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  .step-icon {
+    animation: none !important;
+  }
+}
+
+@media(max-width: 768px) {
+  .ba-container {
+    height: 320px;
+  }
+}

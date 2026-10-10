@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limpô Rio Preto — Higienização e Impermeabilização de Estofados</title>
+    <meta name="description" content="Especialistas em higienização, limpeza profunda e impermeabilização de sofás, colchões e tapetes em São José do Rio Preto e região. Solicite seu orçamento!">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            DEFAULT: '#0B2545',
+                            dark: '#07182E',
+                            light: '#13315C'
+                        },
+                        gold: {
+                            DEFAULT: '#C5A059',
+                            light: '#E2C288'
+                        },
+                        sand: {
+                            DEFAULT: '#F9F8F6',
+                            dark: '#EFECE6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-sand text-navy font-sans antialiased selection:bg-gold selection:text-white">
+
+    <!-- HEADER / NAVEGAÇÃO -->
+    <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-[#0B2545]/95 backdrop-blur-md border-b border-white/5 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logotipo Oficial -->
+            <a href="#inicio" class="flex items-center shrink-0 transition-transform duration-300 hover:scale-105" aria-label="Limpô Rio Preto - Início">
+                <img src="public/Images/Logo.png" alt="Limpô Rio Preto" class="h-10 sm:h-11 w-auto object-contain">
+            </a>
+
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex items-center gap-7 font-semibold text-[12px] uppercase tracking-wider text-white/80">
+                <a href="#inicio" class="hover:text-gold transition-colors relative group">
+                    Início
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#beneficios" class="hover:text-gold transition-colors relative group">
+                    Benefícios
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#antes-depois" class="hover:text-gold transition-colors relative group">
+                    Antes e Depois
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#servicos" class="hover:text-gold transition-colors relative group">
+                    Serviços
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#galeria" class="hover:text-gold transition-colors relative group">
+                    Galeria
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#como-funciona" class="hover:text-gold transition-colors relative group">
+                    Como Funciona
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#avaliacoes" class="hover:text-gold transition-colors relative group">
+                    Avaliações
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </nav>
+
+            <!-- CTA Header -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#" class="whatsapp-link inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1EBE5D] text-white text-[13px] font-bold px-6 py-3 rounded-full shadow-lg transition-all transform hover:-translate-y-1 active:scale-95">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    <span>Orçamento</span>
+                </a>
+            </div>
+
+            <!-- Botão Menu Mobile -->
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none p-2" aria-label="Abrir menu" aria-controls="mobile-menu" aria-expanded="false">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-sand-dark px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#inicio" class="block py-2 font-medium text-navy hover:text-gold border-b border-sand">Início</a>
+            <a href="#beneficios" class="block py-2 font-medium text-navy hover:text-gold border-b border-sand">Benefícios</a>
+            <a href="#antes-depois" class="block py-2 font-medium text-navy hover:text-gold border-b border-sand">Antes e Depois</a>
+            <a href="#servicos" class="block py-2 font-medium text-navy hover:text-gold border-b border-sand">Serviços</a>
+            <a href="#galeria" class="block py-2 font-medium text-navy hover:text-gold border-b border-sand">Galeria</a>
+            <a href="#como-funciona" class="block py-2 font-medium text-navy hover:text-gold border-b border-sand">Como Funciona</a>
+            <a href="#avaliacoes" class="block py-2 font-medium text-navy hover:text-gold border-b border-sand">Avaliações</a>
+            <div class="pt-2">
+                <a href="#" class="whatsapp-link w-full text-center inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold py-3 rounded-xl shadow">
+                    Solicitar orçamento
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- SEÇÃO 2 — HERO PRINCIPAL (CINEMATIC) -->
+        <section id="inicio" class="relative overflow-hidden min-h-[90vh] flex items-center py-20 lg:py-28">
+            <!-- Background Image -->
+            <div class="absolute inset-0 z-0">
+                <img src="public/Images/hero-sofa.png" alt="Sofá limpo e higienizado" class="w-full h-full object-cover object-center hero-parallax-img">
+            </div>
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 z-10 hero-bg-overlay"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
+                <div class="max-w-2xl space-y-7 hero-entrance">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy/70 backdrop-blur-md border border-gold/40 text-[11px] font-semibold tracking-[0.15em] uppercase text-gold shadow-lg">
+                        <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+                        Higienização e Impermeabilização Profissional
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.05]">
+                        Seu sofá limpo em <span class="text-gold">2 horas</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-200/90 font-normal leading-relaxed max-w-xl">
+                        Mais saúde, bem-estar e conforto para sua família. Remoção profunda de sujeiras, ácaros e odores com secagem ultra-rápida.
+                    </p>
+
+                    <div class="flex items-center gap-2 text-sm font-medium text-slate-300">
+                        <svg class="w-5 h-5 text-gold flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>São José do Rio Preto e região</span>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-3">
+                        <a href="#" class="whatsapp-link inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1EBE5D] text-white text-base font-bold px-8 py-4 rounded-xl shadow-xl transition-all duration-300 transform hover:-translate-y-1 active:scale-95 focus-visible:outline-none">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                            <span>Solicitar orçamento</span>
+                        </a>
+                        <a href="#galeria" class="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/15 text-white text-base font-semibold px-6 py-4 rounded-xl border border-white/25 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 active:scale-95">
+                            <span>Explorar galeria</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 3 — BENEFÍCIOS -->
+        <section id="beneficios" class="py-24 bg-white border-y border-sand-dark">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">
+                        Mais do que limpeza. Mais cuidado com o seu ambiente.
+                    </h2>
+                    <p class="mt-4 text-lg text-muted">
+                        Tecnologia avançada de extração que protege as fibras, elimina ácaros e devolve o viço original aos seus estofados.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Benefício 1 -->
+                    <div class="bg-sand p-8 rounded-2xl border border-sand-dark card-hover-effect reveal stagger-1">
+                        <div class="relative h-40 mb-6 rounded-xl overflow-hidden shadow-inner group">
+                            <img src="public/Images/higienizacao-sofas.jpg" alt="Higienização profunda" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy/45 via-navy/5 to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 w-10 h-10 rounded-lg bg-navy/90 text-gold flex items-center justify-center backdrop-blur-sm border border-white/10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy mb-2">Higienização profunda</h3>
+                        <p class="text-muted text-sm leading-relaxed">Remove sujeiras entranhadas nas camadas mais profundas do tecido com equipamentos profissionais.</p>
+                    </div>
+
+                    <!-- Benefício 2 -->
+                    <div class="bg-sand p-8 rounded-2xl border border-sand-dark card-hover-effect reveal stagger-2">
+                        <div class="relative h-40 mb-6 rounded-xl overflow-hidden shadow-inner group">
+                            <img src="public/Images/sofa-antes.jpg" alt="Remoção de odores" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy/45 via-navy/5 to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 w-10 h-10 rounded-lg bg-navy/90 text-gold flex items-center justify-center backdrop-blur-sm border border-white/10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy mb-2">Remoção de odores</h3>
+                        <p class="text-muted text-sm leading-relaxed">Elimina ácaros, fungos, bactérias e odores desagradáveis, purificando o ar da sua casa.</p>
+                    </div>
+
+                    <!-- Benefício 3 -->
+                    <div class="bg-sand p-8 rounded-2xl border border-sand-dark card-hover-effect reveal stagger-3">
+                        <div class="relative h-40 mb-6 rounded-xl overflow-hidden shadow-inner group">
+                            <img src="public/Images/higienizacao-tapetes.jpg" alt="Mais conforto" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy/45 via-navy/5 to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 w-10 h-10 rounded-lg bg-navy/90 text-gold flex items-center justify-center backdrop-blur-sm border border-white/10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy mb-2">Mais conforto</h3>
+                        <p class="text-muted text-sm leading-relaxed">Renova o toque macio e o aspecto visual dos estofados, valorizando o ambiente.</p>
+                    </div>
+
+                    <!-- Benefício 4 -->
+                    <div class="bg-sand p-8 rounded-2xl border border-sand-dark card-hover-effect reveal stagger-4">
+                        <div class="relative h-40 mb-6 rounded-xl overflow-hidden shadow-inner group">
+                            <img src="public/Images/impermeabilizacao-sofa.jpg" alt="Cuidado com os tecidos" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy/45 via-navy/5 to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 w-10 h-10 rounded-lg bg-navy/90 text-gold flex items-center justify-center backdrop-blur-sm border border-white/10">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy mb-2">Cuidado com os tecidos</h3>
+                        <p class="text-muted text-sm leading-relaxed">Produtos específicos e equilibrados que preservam a integridade e a cor de cada material.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 4 — ANTES E DEPOIS -->
+        <section id="antes-depois" class="py-24">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">
+                        A diferença está nos detalhes
+                    </h2>
+                    <p class="mt-4 text-lg text-muted">
+                        Veja como a higienização profissional pode transformar completamente a aparência do seu estofado. Arraste a barra para comparar.
+                    </p>
+                </div>
+
+                <!-- Comparador Interativo -->
+                <div id="ba-container" class="ba-container bg-slate-200 reveal">
+                    <!-- ANTES (Fundo) -->
+                    <div class="ba-image-before">
+                        <img src="public/Images/sofa-antes.jpg" alt="Antes da higienização" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+
+                    <!-- DEPOIS (Sobreposição revelada pelo slider) -->
+                    <div id="ba-after-wrap" class="ba-image-after-wrap">
+                        <div class="ba-image-after" style="width: 100%; height: 100%;">
+                            <img src="public/Images/sofa-depois.jpg" alt="Depois da higienização" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" style="width: 100%; height: 100%;">
+                        </div>
+                    </div>
+
+                    <!-- Rótulos -->
+                    <span class="ba-label ba-label-before">Antes</span>
+                    <span class="ba-label ba-label-after">Depois</span>
+
+                    <!-- Alça de arrastar -->
+                    <div id="ba-handle" class="ba-slider-handle" role="slider" aria-label="Comparar antes e depois" aria-orientation="horizontal" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                        <div class="ba-slider-button">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-10 reveal">
+                    <a href="#" class="whatsapp-link inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1EBE5D] text-white text-base font-bold px-8 py-4 rounded-xl shadow-lg transition-all duration-300 hover:-translate-y-1 active:scale-95">
+                        <span>Quero meu estofado limpo assim</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 5 — SERVIÇOS -->
+        <section id="servicos" class="py-24 bg-white border-y border-sand-dark">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">
+                        Cuidado especializado para cada superfície
+                    </h2>
+                    <p class="mt-4 text-lg text-muted">
+                        Soluções sob medida para higienização e proteção do seu patrimônio com atendimento em domicílio.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Servico 1 -->
+                    <div class="bg-sand rounded-2xl overflow-hidden border border-sand-dark flex flex-col group card-hover-effect reveal stagger-1">
+                        <div class="relative h-52 bg-slate-100 overflow-hidden">
+                            <img src="public/Images/higienizacao-sofas.jpg" alt="Higienização de Sofás" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-navy mb-2">Higienização de Sofás</h3>
+                                <p class="text-muted text-sm mb-6">Cuidado profundo para o centro do seu conforto.</p>
+                            </div>
+                            <a href="#" class="whatsapp-link inline-flex items-center justify-center gap-2 bg-navy hover:bg-navy-light text-white text-sm font-semibold py-3 px-4 rounded-xl transition-all duration-300 hover:-translate-y-0.5 active:scale-95">
+                                <span>Solicitar orçamento</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Servico 2 -->
+                    <div class="bg-sand rounded-2xl overflow-hidden border border-sand-dark flex flex-col group card-hover-effect reveal stagger-2">
+                        <div class="relative h-52 bg-slate-100 overflow-hidden">
+                            <img src="public/Images/higienizacao-colchoes.jpg" alt="Higienização de Colchões" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-navy mb-2">Higienização de Colchões</h3>
+                                <p class="text-muted text-sm mb-6">Mais higiene e cuidado para o seu descanso.</p>
+                            </div>
+                            <a href="#" class="whatsapp-link inline-flex items-center justify-center gap-2 bg-navy hover:bg-navy-light text-white text-sm font-semibold py-3 px-4 rounded-xl transition-all duration-300 hover:-translate-y-0.5 active:scale-95">
+                                <span>Solicitar orçamento</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Servico 3 -->
+                    <div class="bg-sand rounded-2xl overflow-hidden border border-sand-dark flex flex-col group card-hover-effect reveal stagger-3">
+                        <div class="relative h-52 bg-slate-100 overflow-hidden">
+                            <img src="public/Images/higienizacao-tapetes.jpg" alt="Higienização de Tapetes" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-navy mb-2">Higienização de Tapetes</h3>
+                                <p class="text-muted text-sm mb-6">Renovação e cuidado para as fibras do seu ambiente.</p>
+                            </div>
+                            <a href="#" class="whatsapp-link inline-flex items-center justify-center gap-2 bg-navy hover:bg-navy-light text-white text-sm font-semibold py-3 px-4 rounded-xl transition-all duration-300 hover:-translate-y-0.5 active:scale-95">
+                                <span>Solicitar orçamento</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Servico 4 -->
+                    <div class="bg-sand rounded-2xl overflow-hidden border border-sand-dark flex flex-col group card-hover-effect reveal stagger-4">
+                        <div class="relative h-52 bg-slate-100 overflow-hidden">
+                            <img src="public/Images/impermeabilizacao-sofa.jpg" alt="Impermeabilização de Estofados" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-navy mb-2">Impermeabilização</h3>
+                                <p class="text-muted text-sm mb-6">Uma camada extra de proteção contra líquidos e manchas.</p>
+                            </div>
+                            <a href="#" class="whatsapp-link inline-flex items-center justify-center gap-2 bg-navy hover:bg-navy-light text-white text-sm font-semibold py-3 px-4 rounded-xl transition-all duration-300 hover:-translate-y-0.5 active:scale-95">
+                                <span>Solicitar orçamento</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 6 — GALERIA DE TRABALHOS (LAYOUT ASSIMÉTRICO EDITORIAL) -->
+        <section id="galeria" class="py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">
+                        Cuidado que você pode ver
+                    </h2>
+                    <p class="mt-4 text-lg text-muted">
+                        Explore nossos registros de atendimento e padrão de excelência em cada serviço realizado. Clique na imagem para ampliar.
+                    </p>
+                </div>
+
+                <div class="gallery-grid">
+                    <!-- Item 1 — Destaque grande -->
+                    <figure class="gallery-item g-item-1 reveal" data-title="Sofá higienizado" data-img="public/Images/higienizacao-sofas.jpg">
+                        <img src="public/Images/higienizacao-sofas.jpg" alt="Sofá higienizado" loading="lazy" class="w-full h-full object-cover">
+                        <figcaption class="gallery-overlay">
+                            <span class="text-white font-bold text-lg">Sofá higienizado</span>
+                        </figcaption>
+                    </figure>
+
+                    <!-- Item 2 — Faixa larga -->
+                    <figure class="gallery-item g-item-2 reveal" data-title="Técnico realizando a limpeza" data-img="public/Images/hero-sofa.png">
+                        <img src="public/Images/hero-sofa.png" alt="Técnico realizando a limpeza" loading="lazy" class="w-full h-full object-cover">
+                        <figcaption class="gallery-overlay">
+                            <span class="text-white font-bold text-lg">Técnico realizando a limpeza</span>
+                        </figcaption>
+                    </figure>
+
+                    <!-- Item 3 -->
+                    <figure class="gallery-item g-item-3 reveal" data-title="Extração de sujeira" data-img="public/Images/sofa-antes.jpg">
+                        <img src="public/Images/sofa-antes.jpg" alt="Extração de sujeira" loading="lazy" class="w-full h-full object-cover">
+                        <figcaption class="gallery-overlay">
+                            <span class="text-white font-bold text-base">Extração de sujeira</span>
+                        </figcaption>
+                    </figure>
+
+                    <!-- Item 4 -->
+                    <figure class="gallery-item g-item-4 reveal" data-title="Tapete higienizado" data-img="public/Images/higienizacao-tapetes.jpg">
+                        <img src="public/Images/higienizacao-tapetes.jpg" alt="Tapete higienizado" loading="lazy" class="w-full h-full object-cover">
+                        <figcaption class="gallery-overlay">
+                            <span class="text-white font-bold text-base">Tapete higienizado</span>
+                        </figcaption>
+                    </figure>
+
+                    <!-- Item 5 -->
+                    <figure class="gallery-item g-item-5 reveal" data-title="Colchão higienizado" data-img="public/Images/higienizacao-colchoes.jpg">
+                        <img src="public/Images/higienizacao-colchoes.jpg" alt="Colchão higienizado" loading="lazy" class="w-full h-full object-cover">
+                        <figcaption class="gallery-overlay">
+                            <span class="text-white font-bold text-lg">Colchão higienizado</span>
+                        </figcaption>
+                    </figure>
+
+                    <!-- Item 6 -->
+                    <figure class="gallery-item g-item-6 reveal" data-title="Impermeabilização de estofado" data-img="public/Images/impermeabilizacao-sofa.jpg">
+                        <img src="public/Images/impermeabilizacao-sofa.jpg" alt="Impermeabilização de estofado" loading="lazy" class="w-full h-full object-cover">
+                        <figcaption class="gallery-overlay">
+                            <span class="text-white font-bold text-lg">Impermeabilização de estofado</span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 7 — COMO FUNCIONA -->
+        <section id="como-funciona" class="py-24 bg-white border-y border-sand-dark">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">
+                        Simples do primeiro contato ao resultado
+                    </h2>
+                    <p class="mt-4 text-lg text-muted">
+                        Processo ágil e transparente para sua total comodidade.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 steps-grid">
+                    <div class="bg-sand p-8 rounded-2xl border border-sand-dark relative card-hover-effect reveal stagger-1">
+                        <div class="step-icon step-icon-1" tabindex="0" role="img" aria-label="Ícone: solicitar orçamento">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                        </div>
+                        <span class="text-5xl font-extrabold text-gold/25 absolute top-4 right-6 select-none">01</span>
+                        <h3 class="text-xl font-bold text-navy mb-3">Solicite seu orçamento</h3>
+                        <p class="text-muted text-sm leading-relaxed">Entre em contato e conte qual estofado precisa de cuidado.</p>
+                    </div>
+
+                    <div class="bg-sand p-8 rounded-2xl border border-sand-dark relative card-hover-effect reveal stagger-2">
+                        <div class="step-icon step-icon-2" tabindex="0" role="img" aria-label="Ícone: avaliação do serviço">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        </div>
+                        <span class="text-5xl font-extrabold text-gold/25 absolute top-4 right-6 select-none">02</span>
+                        <h3 class="text-xl font-bold text-navy mb-3">Avaliação do serviço</h3>
+                        <p class="text-muted text-sm leading-relaxed">Entenda as necessidades do tecido e o procedimento recomendado.</p>
+                    </div>
+
+                    <div class="bg-sand p-8 rounded-2xl border border-sand-dark relative card-hover-effect reveal stagger-3">
+                        <div class="step-icon step-icon-3" tabindex="0" role="img" aria-label="Ícone: higienização especializada">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                        </div>
+                        <span class="text-5xl font-extrabold text-gold/25 absolute top-4 right-6 select-none">03</span>
+                        <h3 class="text-xl font-bold text-navy mb-3">Higienização especializada</h3>
+                        <p class="text-muted text-sm leading-relaxed">Receba o atendimento com cuidado em cada etapa do processo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 8 — AVALIAÇÕES GOOGLE -->
+        <section id="avaliacoes" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="reveal">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">Avaliações Google</h2>
+                    <div class="flex justify-center items-center gap-2 mt-4 text-gold">
+                        <!-- Estrelas -->
+                        <span class="text-3xl font-bold text-navy">5.0</span>
+                        <div class="flex text-gold gap-0.5">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-muted">Baseado em avaliações de nossos clientes em São José do Rio Preto.</p>
+                </div>
+
+                <div class="mt-12 flex justify-center">
+                    <a href="https://share.google/HiJxdldH2Q5QH5qrf" target="_blank" class="inline-flex items-center gap-3 bg-white text-navy font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-gold hover:text-white transition-all duration-300 transform hover:-translate-y-1 active:scale-95 border border-navy/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2">
+                        <svg class="w-6 h-6" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
+                        <span>Ver avaliações no Google</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 9 — CTA FINAL -->
+        <section class="py-24 bg-navy text-white relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#C5A059_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 reveal">
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6">
+                    Seu estofado merece esse cuidado.
+                </h2>
+                <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-10">
+                    Solicite um orçamento e descubra a melhor opção para o seu ambiente. Atendimento rápido e transparente.
+                </p>
+                <a href="#" class="whatsapp-link inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1EBE5D] text-white text-lg font-bold px-10 py-5 rounded-2xl shadow-2xl transition-all duration-300 transform hover:-translate-y-1 active:scale-95">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    <span>Falar pelo WhatsApp</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- SEÇÃO 10 — RODAPÉ -->
+    <footer class="bg-navy-dark text-slate-400 py-12 border-t border-navy">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="space-y-4">
+                    <div class="inline-flex bg-white rounded-xl p-3 shadow-sm">
+                        <img src="public/Images/Logo.png" alt="Limpô Rio Preto" loading="lazy" decoding="async" class="h-10 w-auto object-contain">
+                    </div>
+                    <p class="text-sm">Higienização e impermeabilização de estofados com padrão profissional.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Área de Atendimento</h4>
+                    <p class="text-sm">São José do Rio Preto e região.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Navegação</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#inicio" class="hover:text-gold transition-colors">Início</a></li>
+                        <li><a href="#beneficios" class="hover:text-gold transition-colors">Benefícios</a></li>
+                        <li><a href="#antes-depois" class="hover:text-gold transition-colors">Antes e Depois</a></li>
+                        <li><a href="#servicos" class="hover:text-gold transition-colors">Serviços</a></li>
+                        <li><a href="#galeria" class="hover:text-gold transition-colors">Galeria</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contato Rápido</h4>
+                    <a href="#" class="whatsapp-link inline-flex items-center gap-2 text-white bg-navy hover:bg-navy-light px-4 py-2.5 rounded-xl text-sm font-semibold transition-all">
+                        <span>WhatsApp Direto</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs">
+                <p>&copy; <span id="current-year">2026</span> Limpô Rio Preto. Todos os direitos reservados.</p>
+                <p class="mt-2 sm:mt-0 text-gold font-medium">Qualidade em cada detalhe.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <a href="#" class="whatsapp-link whatsapp-float" aria-label="Contato WhatsApp">
+        <svg class="w-8 h-8 fill-current text-white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    </a>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Visualização ampliada">
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all focus:outline-none" aria-label="Fechar">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <div class="max-w-3xl w-full text-center space-y-4">
+            <div id="lightbox-img" class="w-full flex justify-center"></div>
+            <p id="lightbox-caption" class="text-white text-lg font-semibold"></p>
+        </div>
+    </div>
+
+    <!-- CONFIGURAÇÕES E SCRIPTS -->
+    <script src="config.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
